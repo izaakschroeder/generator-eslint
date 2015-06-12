@@ -111,8 +111,29 @@
 		"yoda": [0, "always"],
 
 		<% if (react) { %>
+		// ------------------------------ React ------------------------------
 		"react/jsx-uses-vars": 2,
-		"react/jsx-uses-react": 2
+		"react/jsx-uses-react": 2,
+
+		// Display name is not needed when using ES6-style components
+		"react/display-name": 0,
+
+		// Make things consistent and readable – prefer `x={true}` over `x`
+		"react/jsx-boolean-value": 2,
+
+		// Keep the quote style consistent with Javascript land
+		"react/jsx-quotes": [2, "single"],
+		"react/jsx-no-undef": 2,
+		"react/jsx-sort-props": 0,
+		"react/jsx-sort-prop-types": 0,
+		"react/no-did-mount-set-state": 2,
+		"react/no-did-update-set-state": 2,
+		"react/no-multi-comp": 2,
+		"react/no-unknown-property": 2,
+		"react/prop-types": 2,
+		"react/react-in-jsx-scope": 0,
+		"react/self-closing-comp": 2,
+		"react/wrap-multilines": 0
 		<%}%>
 	}
 }

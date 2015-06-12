@@ -4,7 +4,7 @@ var ini = require('ini');
 var minimatch = require('minimatch');
 var assign = require('lodash/object/assign');
 var reduce = require('lodash/collection/reduce');
-var open = require('open');
+var util = require('yeoman-util');
 
 function getEditorConfigRules(file, input) {
 	var values = ini.parse(file || '');
@@ -16,6 +16,8 @@ function getEditorConfigRules(file, input) {
 		}
 	}, { });
 }
+
+
 
 module.exports = generators.Base.extend({
 	initializing: function() {
@@ -51,21 +53,12 @@ module.exports = generators.Base.extend({
 		}.bind(this));
 	},
 
-	writing: function() {
-
-		// TODO: ensure package.json
-
-		this.fs.copyTpl(
-			this.templatePath('.eslintrc.json5'),
-			this.destinationPath('.eslintrc'),
-			{
-				react: this.react,
-				indent: this.indent
-			}
-		);
+	writing: {
+		eslintrc: util.copy('.eslintrc', '.eslintrc.json5'),
+		package: util.manifest()
 	},
 
-	end: function() {
-		open(this.destinationPath('.eslintrc'));
+	end: {
+		open: util.open('.eslintrc')
 	}
 });

@@ -16,6 +16,8 @@
 
 	},
 
+	// For complete listing of rules and what they do, check out the docs.
+	// See: https://github.com/eslint/eslint/tree/master/docs/rules
 	"rules": {
 		// The one true brace style.
 		"brace-style": [2, "1tbs"],
@@ -25,6 +27,10 @@
 
 		// Enforce case guidelines used in Javascript.
 		"camelcase": 2,
+
+		// Enforce a reasonable cap on functions spiralling out of control
+		// with many branches.
+		"complexity": [2, 10],
 
 		//
 		"consistent-this": [2, "_this"],
@@ -74,7 +80,7 @@
 		// Use the one true indentation scheme which just so happens to be
 		// tabs.
 		// See: http://programmers.stackexchange.com/questions/57
-		"indent": [2, "tab"],
+		"indent": [2, &quot;tab&quot;],
 
 		// Single quotes are faster to type and seem to be a fairly general
 		// convention in the JS community.
@@ -89,7 +95,7 @@
 		"spaced-line-comment": 2,
 
 		// Transpilers deal with the effects of strict, so ignore it.
-		"strict": 0,
+		"strict": [2, "never"],
 
 		// Enforce good documentation.
 		"valid-jsdoc": [2, {
@@ -105,8 +111,29 @@
 		"yoda": [0, "always"],
 
 		
+		// ------------------------------ React ------------------------------
 		"react/jsx-uses-vars": 2,
-		"react/jsx-uses-react": 2
+		"react/jsx-uses-react": 2,
+
+		// Display name is not needed when using ES6-style components
+		"react/display-name": 0,
+
+		// Make things consistent and readable – prefer `x={true}` over `x`
+		"react/jsx-boolean-value": 2,
+
+		// Keep the quote style consistent with Javascript land
+		"react/jsx-quotes": [2, "single"],
+		"react/jsx-no-undef": 2,
+		"react/jsx-sort-props": 0,
+		"react/jsx-sort-prop-types": 0,
+		"react/no-did-mount-set-state": 2,
+		"react/no-did-update-set-state": 2,
+		"react/no-multi-comp": 2,
+		"react/no-unknown-property": 2,
+		"react/prop-types": 2,
+		"react/react-in-jsx-scope": 0,
+		"react/self-closing-comp": 2,
+		"react/wrap-multilines": 0
 		
 	}
 }
