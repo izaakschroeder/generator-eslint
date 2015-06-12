@@ -80,7 +80,7 @@
 		// Use the one true indentation scheme which just so happens to be
 		// tabs.
 		// See: http://programmers.stackexchange.com/questions/57
-		"indent": [2, &quot;tab&quot;],
+		"indent": [2, "tab"],
 
 		// Single quotes are faster to type and seem to be a fairly general
 		// convention in the JS community.

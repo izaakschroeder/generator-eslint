@@ -20,38 +20,32 @@ function getEditorConfigRules(file, input) {
 
 
 module.exports = generators.Base.extend({
-	initializing: function() {
-		// Detect tabs vs spaces from .editorconfig
-		this.indent = 'tab';
-		if (this.fs.exists('.editorconfig')) {
-			var ec = this.fs.read(this.destinationPath('.editorconfig'));
-			var config = getEditorConfigRules(ec, 'test.js');
-			if (config.indent_style === 'tab') {
-				this.indent = 'tab';
-			} else {
-				this.indent = config.indent_size || 4;
+	initializing: {
+		indent: util.defaults(function() {
+			// Detect tabs vs spaces from .editorconfig
+			if (this.fs.exists('.editorconfig')) {
+				var ec = this.fs.read(this.destinationPath('.editorconfig'));
+				var config = getEditorConfigRules(ec, 'test.js');
+				if (config.indent_style === 'tab') {
+					return { indent: 'tab' };
+				} else {
+					return { indent: config.indent_size || 4 };
+				}
 			}
-		}
-
+			return { indent: 'tab' };
+		})
 	},
 
-	prompting: function () {
-		var done = this.async();
-		this.prompt([{
-			type: 'input',
-			name: 'react',
-			message: 'Use react extensions',
-			default: true
-		}, {
-			type: 'input',
-			name: 'ident',
-			message: 'Indentation style',
-			default: this.indent
-		}], function (answers) {
-			assign(this, answers);
-			done();
-		}.bind(this));
-	},
+	prompting: util.prompt([{
+		type: 'input',
+		name: 'react',
+		message: 'Use react extensions',
+		default: true
+	}, {
+		type: 'input',
+		name: 'indent',
+		message: 'Indentation style'
+	}]),
 
 	writing: {
 		eslintrc: util.copy('.eslintrc', '.eslintrc.json5'),
