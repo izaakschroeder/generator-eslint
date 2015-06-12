@@ -5,6 +5,7 @@
 	"author": "Izaak Schroeder <izaak.schroeder@gmail.com>",
 	"repository": "izaakschroeder/generator-eslint",
 	"license": "CC0-1.0",
+	"main": "./app/index.js",
 	"dependencies": {
 		"yeoman-generator": "^0.20.1",
 		"yeoman-util": "^0.2.0",
