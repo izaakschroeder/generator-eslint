@@ -4,6 +4,7 @@
 	},
 	"devDependencies": {
 		"eslint": "^0.23.0",
+		"eslint-plugin-filenames": "^0.1.1",
 		<% if(react) {%>"eslint-plugin-react": "^2.5.0",<%}%>
 		"babel-eslint": "^3.1.11"
 	}

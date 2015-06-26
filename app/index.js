@@ -45,6 +45,12 @@ module.exports = generators.Base.extend({
 		type: 'input',
 		name: 'indent',
 		message: 'Indentation style'
+	}, {
+		type: 'list',
+		name: 'quotes',
+		message: 'Quotation style',
+		choices: [ 'single', 'double' ],
+		default: 'single'
 	}]),
 
 	writing: {
