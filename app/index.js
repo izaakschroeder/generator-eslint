@@ -48,7 +48,7 @@ module.exports = generators.Base.extend({
 	}]),
 
 	writing: {
-		eslintrc: util.copy('.eslintrc', '.eslintrc.json5'),
+		eslintrc: util.copy('~.eslintrc', '.eslintrc.json5'),
 		package: util.manifest()
 	},
 
