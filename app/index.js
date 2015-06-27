@@ -37,9 +37,14 @@ module.exports = generators.Base.extend({
 	},
 
 	prompting: util.prompt([{
-		type: 'input',
+		type: 'confirm',
+		name: 'babel',
+		message: 'Use ES6/ES7/ES2015 extensions',
+		default: true
+	}, {
+		type: 'confirm',
 		name: 'react',
-		message: 'Use react extensions',
+		message: 'Use React extensions',
 		default: true
 	}, {
 		type: 'input',
