@@ -53,6 +53,6 @@ module.exports = generators.Base.extend({
 	},
 
 	end: {
-		open: util.open('.eslintrc')
+		open: util.open('~.eslintrc')
 	}
 });
