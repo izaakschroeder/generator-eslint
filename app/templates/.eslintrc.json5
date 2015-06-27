@@ -127,7 +127,7 @@
 		// Prevent people from naming their files in formats other than kebab-case.
 		// Rubyists have a bad habit of doing_this_for_js_files and others feel like
 		// variable naming conventionShouldMatchFiles. They're both wrong.
-		"filenames/filenames": [2, "^[a-z-]+$"],
+		"filenames/filenames": [2, "^[a-z.-]+$"],
 
 		// Giving functions names makes them easier to debug and follow in stack
 		// traces. Instead of "<anonymous>" everywhere you have names.
