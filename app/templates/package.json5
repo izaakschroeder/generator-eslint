@@ -3,7 +3,7 @@
 		"lint": "./node_modules/.bin/eslint --ignore-path .gitignore ."
 	},
 	"devDependencies": {
-		"eslint": "^0.23.0",
+		"eslint": "^0.24.0",
 		<% if(react) {%>"eslint-plugin-react": "^2.5.0",<%}%>
 		"babel-eslint": "^3.1.11"
 	}
