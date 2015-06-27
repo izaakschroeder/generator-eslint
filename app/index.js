@@ -1,5 +1,4 @@
 var generators = require('yeoman-generator');
-var path = require('path');
 var ini = require('ini');
 var minimatch = require('minimatch');
 var assign = require('lodash/object/assign');
@@ -8,7 +7,7 @@ var util = require('yeoman-util');
 
 function getEditorConfigRules(file, input) {
 	var values = ini.parse(file || '');
-	return reduce(values, function(config, value, pattern) {
+	return reduce(values, function collectConfig(config, value, pattern) {
 		if (minimatch(input, pattern)) {
 			return assign(config, value);
 		} else {
@@ -17,15 +16,14 @@ function getEditorConfigRules(file, input) {
 	}, { });
 }
 
-
-
 module.exports = generators.Base.extend({
 	initializing: {
-		indent: util.defaults(function() {
+		indent: util.defaults(function generateDefaults() {
+			var ec, config;
 			// Detect tabs vs spaces from .editorconfig
 			if (this.fs.exists('.editorconfig')) {
-				var ec = this.fs.read(this.destinationPath('.editorconfig'));
-				var config = getEditorConfigRules(ec, 'test.js');
+				ec = this.fs.read(this.destinationPath('.editorconfig'));
+				config = getEditorConfigRules(ec, 'test.js');
 				if (config.indent_style === 'tab') {
 					return { indent: 'tab' };
 				} else {

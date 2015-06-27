@@ -4,9 +4,11 @@
 		"node": true
 	},
 
+	<% if (babel) {%>
 	// Use the power of babel for parsing. This allows for use of newer versions
 	// of Javascript and things like JSX.
 	"parser": "babel-eslint",
+	<%}%>
 
 	// Additional linting plugins. To find more plugins to use search on npm
 	// for the keyword `eslintplugin`.
@@ -30,8 +32,10 @@
 		// Possible Errors
 		// -----------------------------------------------------------------------
 
+		<% if (babel) {%>
 		// For ES6 classes ensure they adhere to the spec.
 		"constructor-super": 2,
+		<%}%>
 
 		// Enforce good documentation.
 		"valid-jsdoc": [2, {
@@ -87,11 +91,13 @@
 		// Common sense.
 		"no-use-before-define": 2,
 
+		<% if (babel) {%>
 		// Enforce `const` and `let` to describe what's going on.
 		"no-var": 2,
 
 		// Use `const` whenever possible.
 		"prefer-const": 2,
+		<%}%>
 
 		// -----------------------------------------------------------------------
 		// Stylistic Issues
