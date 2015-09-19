@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "eslint-plugin-filenames": "^0.1.1"
+  }
+}
