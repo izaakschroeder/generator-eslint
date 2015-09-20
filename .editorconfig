@@ -30,7 +30,7 @@ insert_final_newline = true
 
 # Herein be the apex of holy wars. Decidedly more idyllic than pragmatic.
 # http://programmers.stackexchange.com/questions/57
-indent_style = tab
+indent_style = 2
 
 # Personal preference here. Smaller indent size means you can fit more on a line
 # which can be nice when there are lines with several indentations.

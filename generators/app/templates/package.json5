@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint --ignore-path .gitignore ."
+  },
+  "devDependencies": {
+    "eslint": "^1.5.0"
+  }
+}
