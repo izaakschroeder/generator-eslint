@@ -9,7 +9,7 @@
     "constructor-super": 2,
 
     // http://eslint.org/docs/rules/comma-dangle
-    "comma-dangle": [2, "never"],
+    "comma-dangle": [2, "always-multiline"],
 
     // http://eslint.org/docs/rules/no-cond-assign
     "no-cond-assign": [2, "always"],
