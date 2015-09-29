@@ -1,4 +1,7 @@
 {
+  // JSX style mandates that we wrap our multiline elements in parens
+  "no-extra-parens": 0,
+
   // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/
   "react/display-name": 0,
   "react/jsx-boolean-value": 2,
