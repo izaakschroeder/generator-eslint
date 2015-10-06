@@ -12,10 +12,7 @@ root = true
 # Pick some sane defaults for all files.
 [*]
 
-# UNIX line-endings are preferred since:
-# * git prefers them
-# * servers run on Linux
-# * most developers use Mac OS X
+# UNIX line-endings are preferred.
 end_of_line = lf
 
 # No reason in these modern times to use anything other than UTF-8.
