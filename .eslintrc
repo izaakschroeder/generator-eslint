@@ -1,9 +1,9 @@
 {
-  "env": {
-    "node": true
-  },
+  "rules": {},
   "extends": [
-    "./config/eslint/base.eslintrc",
-    "./config/eslint/style.eslintrc"
+    "metalab/rules/style",
+    "metalab/rules/errors",
+    "metalab/rules/best-practices",
+    "metalab/rules/node"
   ]
 }

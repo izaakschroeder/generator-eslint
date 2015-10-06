@@ -3,6 +3,7 @@
     "lint": "./node_modules/.bin/eslint --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "eslint": "^1.5.1"
+    "eslint": "^1.6.0",
+    "eslint-config-metalab": "^0.1.0"
   }
 }
