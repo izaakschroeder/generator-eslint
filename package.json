@@ -1,6 +1,6 @@
 {
 	"name": "@metalab/generator-eslint",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"description": "Setup eslint for your project.",
 	"author": "Izaak Schroeder <izaak.schroeder@gmail.com>",
 	"repository": "izaakschroeder/generator-eslint",
