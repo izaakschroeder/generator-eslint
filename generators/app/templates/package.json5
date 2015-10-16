@@ -4,6 +4,6 @@
   },
   "devDependencies": {
     "eslint": "^1.6.0",
-    "eslint-config-metalab": "^0.2.1"
+    "eslint-config-metalab": "^0.2.2"
   }
 }
